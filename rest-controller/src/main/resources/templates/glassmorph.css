@@ -1,0 +1,66 @@
+
+body {
+    background-color: #0f172a;
+    font-family: 'San Francisco', Helvetica, Arial, san-serif;
+    /*background-image: url("static/foto1.jpg");*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #FFF;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #FFF;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #FFF;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+.submit:hover {
+    background-color: #FFFFFF;
+}
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Person Form</title>
+  <link rel="stylesheet" type="text/css" href="person.css">
+  <link rel="stylesheet" type="text/css" href="glassmorph.css">
+
+</head>
+<body>
+<h1>Person Form</h1>
+<div>
+  <div class="container">
+    <form id="personForm">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+
+<div id="result"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#person").submit(function(event) {
+      event.preventDefault(); // Mencegah form untuk melakukan submit secara default
+
+      // Mendapatkan nilai input dari form
+      var fname = $("#fname").val();
+      var lname = $("#lname").val();
+      var username = $("#username").val();
+      var email = $("#email").val();
+      var password = $("#password").val();
+
+      // Membuat objek data untuk dikirim sebagai payload
+      var data = {
+        fname: fname,
+        lname: lname,
+        username: username,
+        email: email,
+        password: password
+      };
+
+      // Melakukan permintaan POST menggunakan jQuery AJAX
+      $.ajax({
+        type: "POST",
+        url: "/person",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function(response) {
+          // Menampilkan pesan sukses
+          $("#result").text(response.msg);
+        },
+        error: function(xhr, status, error) {
+          // Menampilkan pesan error
+          $("#result").text("Terjadi kesalahan: " + error);
+        }
+      });
+    });
+  });
+</script>
+
+
+  <!-- Isi form di sini -->
+</form>
+
+</body>
+</html>

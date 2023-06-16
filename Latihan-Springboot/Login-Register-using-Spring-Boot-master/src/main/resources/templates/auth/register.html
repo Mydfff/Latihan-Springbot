@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Register</title>
+  <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,300&family=Silkscreen&display=swap'); */
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+
+    /* .box .form-content .form-main {
+      justify-items: center;
+      width: 150px;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -100px;
+      margin-top: -50px;
+      text-decoration: none;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(30px);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+    } */
+    /* .button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    } */
+    /* padding-bottom: 400px;
+    padding-top: 375px;
+      height: 100%; */
+    body {
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background: rgb(68, 68, 95);
+      background: radial-gradient(
+              circle,
+              rgb(23 23 59) 0%,
+              rgba(25, 25, 31, 1) 100%
+      );
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+
+    /* background color */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* body {
+      background-color: var(--body-bg-color);
+    } */
+
+    .button {
+      justify-items: center;
+      width: 150px;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -100px;
+      margin-top: -50px;
+      text-decoration: none;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(30px);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .form-main {
+      min-height: 100vh;
+      padding: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-content {
+      width: 100%;
+      max-width: 450px;
+    }
+    .form-content .box {
+      background-color: var(--glass-bg-color);
+      border: 1px solid var(--border-color);
+      padding: 40px 50px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(30px);
+      color: rgba(255, 255, 255, 0.8);
+
+    }
+
+    .form-content form {
+      margin: 25px 0 20px;
+    }
+
+    .form-content .input-box {
+      margin-bottom: 25px;
+    }
+
+    .form-content ::placeholder{
+      color: inherit;
+      opacity: 1;
+    }
+    .form-content .input-control {
+      display: block;
+      height: 45px;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-color);
+      color: inherit;
+      font-weight: inherit;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .form-content .input-control :focus {
+      outline: none;
+    }
+
+    .form-content .input-link {
+      margin-top: 10px;
+      text-align: right;
+    }
+
+
+    .form-content h3 {
+      font-size: 28px;
+      text-align: center;
+      line-height: 1.2;
+      color: var(--text-white);
+      font-weight: 500;
+    }
+
+    .box a {
+      color: rgb(88, 117, 204);
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .form-content   .btn {
+      height: 45px;
+      width: 100%;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-family: inherit;
+      user-select: none;
+
+
+      border: none;
+      color: #d4d4d4;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    /* .form-content .btn::before{
+      content: '' ;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      transition: background-color 1s ease;
+      z-index: -1;
+    }
+
+    .form-content .btn::before {
+      background-color: var(--button-hover-cover);
+    } */
+
+    .form-content .btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }  </style>
+</head>
+<body>
+<!--  <form th:action="@{/register}" th:object="${user}" method="post">-->
+<!--    <h3>Registration</h3>-->
+<!--    <input type="text" th:field="*{firstName}" placeholder="First Name" /> <br/><br/>-->
+<!--    <input type="text" th:field="*{lastName}" placeholder="Last Name" /> <br/><br/>-->
+<!--    <input type="text" th:field="*{mobile}" placeholder="Mobile Number" /> <br/><br/>-->
+<!--    <input type="text" th:field="*{email}" placeholder="Email" /> <br/><br/>-->
+<!--    <input type="password" th:field="*{password}" placeholder="Password" /> <br/><br/>-->
+<!--    <select th:field="*{role}" required>-->
+<!--      <option value="">Select</option>-->
+<!--      <option value="ADMIN">ADMIN</option>-->
+<!--      <option value="USER">USER</option>-->
+<!--    </select> <br/><br/>-->
+<!--    <button type="submit">Register</button> | <a th:href="@{|/login|}" th:text="'Log in'"></a>-->
+<!--    <span th:utext="${successMessage}"></span>-->
+<!--    <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}">-->
+<!--      <ul th:each="data : ${bindingResult.getAllErrors()}">-->
+<!--        <li th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--</form>-->
+
+  <section class="form-main">
+    <div class="form-content">
+      <div class="box">
+        <h3>Create Account</h3>
+        <form action="@{/register}" object="${user}" method="post">
+          <div class="input-box">
+            <input type="text" class="input-control" field="*{username}" placeholder="Username">
+          </div>
+          <div class="input-box">
+            <input type="text" class="input-control" field="*{nama}" placeholder="Nama">
+          </div>
+          <div class="input-box">
+            <input type="password" class="input-control" field="*{Password}" placeholder="Password">
+          </div>
+          <select field="*{role}" required>
+            <option value="">Select</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER">USER</option>
+          </select> <br/><br/>
+          <button type="submit" class="btn" name="register">Register</button>
+          <p>Already have an account ? <a href="@{|/login|}">Log in</a></p>
+          <span th:utext="${successMessage}"></span>
+          <div th:if="${bindingResult!=null && bindingResult.getAllErrors()!=null}">
+            <ul th:each="data : ${bindingResult.getAllErrors()}">
+              <li th:text="${data.getObjectName() + ' :: ' + data.getDefaultMessage()}"></li>
+            </ul>
+          </div>
+
+      </form>
+
+    </div>
+    </div>
+  </section>
+
+
+</body>
+</html>

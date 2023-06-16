@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User Dashboard</title>
+  <style>
+    body {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background: rgb(68, 68, 95);
+      background: radial-gradient(
+              circle,
+              rgb(23 23 59) 0%,
+              rgba(25, 25, 31, 1) 100%
+      );
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      border-radius: 15px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<<body>
+<div class="container">
+  <h1>Welcome to User Dashboard</h1>
+  <p>Logged as: <span th:text="${username}"></span></p>
+  <p th:if="${isAdmin}">Has role: Admin</p>
+  <p th:unless="${isAdmin}">Has role: User</p>
+  <div>
+    <p><a class="button" href="@{/}">Home</a></p>
+    <p><a class="button" href="@{/logout}">Log out</a></p>
+  </div>
+</body>
+</html>
